@@ -1,12 +1,13 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { BibliotecaFormComponent } from './components/bibliotecaformulario/biblioteca';
+import { BibliotecaTableComponent } from './components/bibliotecatabla/bibliotecatable';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, BibliotecaFormComponent, BibliotecaTableComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('frontend-parcial');
-}
+export class App {}
