@@ -1,0 +1,84 @@
+.form-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 480px;
+}
+
+.form-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.4rem;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #4a7c59;
+  padding-bottom: 0.5rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.field-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.field-group input {
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.95rem;
+  color: #2d3748;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.field-group input:focus {
+  border-color: #4a7c59;
+  box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.15);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 0.7rem;
+  background: #4a7c59;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+
+.btn-submit:hover {
+  background: #3a6347;
+}
+
+.msg-success {
+  margin-top: 1rem;
+  color: #276749;
+  background: #f0fff4;
+  border: 1px solid #9ae6b4;
+  border-radius: 6px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.msg-error {
+  margin-top: 1rem;
+  color: #c53030;
+  background: #fff5f5;
+  border: 1px solid #feb2b2;
+  border-radius: 6px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.9rem;
+}

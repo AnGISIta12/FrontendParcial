@@ -1,0 +1,38 @@
+<div class="table-card">
+  <div class="table-header">
+    <h2 class="table-title">Bibliotecas Registradas</h2>
+    <button class="btn-refresh" (click)="cargar()">↻ Actualizar</button>
+  </div>
+
+  <p *ngIf="cargando" class="loading">Cargando...</p>
+  <p *ngIf="error" class="msg-error">{{ error }}</p>
+
+  <div *ngIf="!cargando && !error">
+    <p *ngIf="bibliotecas.length === 0" class="empty">No hay bibliotecas registradas aún.</p>
+
+    <table *ngIf="bibliotecas.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Dirección</th>
+          <th>Teléfono</th>
+          <th>Responsable</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of bibliotecas">
+          <td>{{ b.id }}</td>
+          <td>{{ b.nombre }}</td>
+          <td>{{ b.direccion }}</td>
+          <td>{{ b.telefono }}</td>
+          <td>{{ b.responsable }}</td>
+          <td>
+            <button class="btn-delete" (click)="eliminar(b.id!)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

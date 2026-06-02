@@ -1,0 +1,57 @@
+<div class="form-card">
+  <h2 class="form-title">Registrar Biblioteca</h2>
+
+  <form (ngSubmit)="onSubmit()" #formRef="ngForm">
+    <div class="field-group">
+      <label for="nombre">Nombre</label>
+      <input
+        id="nombre"
+        type="text"
+        [(ngModel)]="biblioteca.nombre"
+        name="nombre"
+        placeholder="Ej: Biblioteca Central"
+        required
+      />
+    </div>
+
+    <div class="field-group">
+      <label for="direccion">Dirección</label>
+      <input
+        id="direccion"
+        type="text"
+        [(ngModel)]="biblioteca.direccion"
+        name="direccion"
+        placeholder="Ej: Calle 10 # 4-50, Bogotá"
+        required
+      />
+    </div>
+
+    <div class="field-group">
+      <label for="telefono">Teléfono</label>
+      <input
+        id="telefono"
+        type="text"
+        [(ngModel)]="biblioteca.telefono"
+        name="telefono"
+        placeholder="Ej: 601-234-5678"
+        required
+      />
+    </div>
+
+    <div class="field-group">
+      <label for="responsable">Responsable</label>
+      <input
+        id="responsable"
+        type="text"
+        [(ngModel)]="biblioteca.responsable"
+        name="responsable"
+        placeholder="Ej: Ana García"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn-submit">Registrar</button>
+  </form>
+
+  <p *ngIf="mensaje" [class]="esError ? 'msg-error' : 'msg-success'">{{ mensaje }}</p>
+</div>
