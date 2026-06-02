@@ -7,33 +7,27 @@ import { Biblioteca } from '../../models/biblioteca.model';
   selector: 'app-biblioteca-table',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './biblioteca-table.component.html',
-  styleUrls: ['./biblioteca-table.component.css']
+  templateUrl: './bibliotecatable.html',
+  styleUrls: ['./bibliotecatable.css'],
 })
 export class BibliotecaTableComponent implements OnInit {
-
   bibliotecas: Biblioteca[] = [];
   cargando: boolean = false;
   error: string = '';
 
   constructor(private bibliotecaService: BibliotecaService) {}
 
-  ngOnInit(): void {
-    this.cargar();
-  }
+  ngOnInit(): void { this.cargar(); }
 
   cargar(): void {
     this.cargando = true;
     this.error = '';
     this.bibliotecaService.listarTodos().subscribe({
-      next: (data) => {
-        this.bibliotecas = data;
+      next: (data) => { this.bibliotecas = data; this.cargando = false; },
+      error: () => {
+        this.error = 'No se pudo conectar al backend (localhost:8080).';
         this.cargando = false;
       },
-      error: () => {
-        this.error = 'No se pudo conectar al backend.';
-        this.cargando = false;
-      }
     });
   }
 
@@ -41,7 +35,7 @@ export class BibliotecaTableComponent implements OnInit {
     if (!confirm('¿Eliminar esta biblioteca?')) return;
     this.bibliotecaService.eliminar(id).subscribe({
       next: () => this.cargar(),
-      error: () => alert('Error al eliminar.')
+      error: () => alert('Error al eliminar.'),
     });
   }
 }
