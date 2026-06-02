@@ -1,28 +1,68 @@
 ﻿# FrontendParcial
 
-Repositorio para el frontend del parcial con Angular.
+Repositorio del frontend para el parcial con Angular.
 
-## Inicializar servidor Angular
+## Estructura del repositorio
 
-1. Instala Angular CLI si no lo tienes:
-   `ash
-   npm install -g @angular/cli
-   `
-2. Ve a la carpeta del proyecto:
-   `ash
-   cd FrontendParcial
-   `
-3. Si no tienes dependencias instaladas, ejecuta:
-   `ash
-   npm install
-   `
-4. Arranca el servidor de desarrollo:
-   `ash
-   ng serve
-   `
-5. Abre el navegador en:
-   `	ext
-   http://localhost:4200
-   `
+- `README.md`: documentación del proyecto y cómo ejecutarlo.
+- `package.json`: dependencias y scripts de npm.
+- `angular.json`: configuración del proyecto Angular.
+- `tsconfig.json`: configuración de TypeScript.
+- `src/`
+  - `app/`
+    - `components/`: componentes reutilizables.
+    - `pages/`: páginas principales de la aplicación.
+    - `services/`: servicios para consumir APIs y lógica compartida.
+    - `models/`: interfaces y tipos de datos.
+    - `app.module.ts`: módulo principal de Angular.
+    - `app.component.ts`: componente raíz.
+  - `assets/`: imágenes, estilos y recursos estáticos.
+  - `environments/`: configuración de entornos (`environment.ts`, `environment.prod.ts`).
+  - `index.html`: archivo HTML principal.
+  - `styles.scss` o `styles.css`: estilos globales.
 
-> Si el nombre del proyecto es diferente, asegúrate de usar la ruta correcta al directorio del frontend.
+## Requisitos
+
+- Node.js 16 o superior.
+- npm 8 o superior.
+- Angular CLI instalado globalmente (opcional, pero recomendado).
+
+## Instalación
+
+1. Sitúate en la carpeta del proyecto:
+
+```bash
+cd "c:\Users\angyl\OneDrive - Pontificia Universidad Javeriana\SEPTIMO SEMESTRE\WEB\FrontendParcial"
+```
+
+2. Instala las dependencias:
+
+```bash
+npm install
+```
+
+## Uso
+
+Para arrancar el servidor de desarrollo:
+
+```bash
+ng serve
+```
+
+Abre el navegador en:
+
+```text
+http://localhost:4200
+```
+
+## Scripts comunes
+
+- `npm start` o `ng serve`: iniciar servidor de desarrollo.
+- `npm run build`: compilar la aplicación para producción.
+- `npm test`: ejecutar pruebas (si están configuradas).
+- `npm run lint`: comprobar la calidad del código.
+
+## Notas
+
+- Si se usa otro nombre de proyecto o ruta, ajusta los comandos al directorio correspondiente.
+- Mantén la estructura clara para separar componentes, páginas y servicios.
